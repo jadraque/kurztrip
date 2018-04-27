@@ -1,8 +1,14 @@
-# WE Flüge
+# Kurztrip
 
-**Günstige WE Flüge von Süddeutschland**
+## Günstige Kurztrip ab Süddeutschland
 
-CREDITS:
+### Goal
+
+I love travelling, no matter where. But I do hate to manually check for cheap flights every time. Hence, I've built this site to automatically showcase which are the cheapest flights from the south of Germany for the next quarter. 
+
+Flights currently shown are just Ryanair's, from Memmingen and Munich. I'll be updating the repo shortly to include other airlines as well as flights from Friedrichshafen and Zürich airports. 
+
+### Credits
 
 Background pic: https://www.pexels.com/photo/above-atmosphere-clouds-flight-37728/
 Madrid pic: https://www.pexels.com/photo/people-gathering-near-plaza-930595/
