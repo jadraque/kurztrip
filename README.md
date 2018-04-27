@@ -2,6 +2,10 @@
 
 ## Günstige Kurztrip ab Süddeutschland
 
+### Github pages
+
+https://jadraque.github.io/kurztrip/
+
 ### Goal
 
 I love travelling, no matter where. But I do hate to manually check for cheap flights every time. Hence, I've built this site to automatically showcase which are the cheapest flights from the south of Germany for the next quarter. 
