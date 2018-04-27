@@ -1,0 +1,19 @@
+ul.origin {
+    text-align: right;
+}
+
+ul.duration {
+    text-align: center;
+}
+
+ul.destination {
+    text-align: left;
+}
+
+li.hour {
+    font-size: 150%;
+}
+
+li.city {
+    font-size: 100%;
+}

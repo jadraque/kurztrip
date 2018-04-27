@@ -1,0 +1,101 @@
+---
+# this is an empty front matter
+---
+
+{% include header.html %}
+
+{% include navbar.html %}
+
+{% capture background_path %}{% link assets/img/background.jpg %}{% endcapture %}
+<body style="background-image: url('{{ background_path | absolute_url }}'); background-size: 100% auto; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <div>
+    {% for flight in site.data.flights %}
+        <div class="row container">
+            <div class="col s12 m12">
+                <div class="card">
+
+                    <div class="card-image">
+                        <img class="responsive-img" src="{{ flight.pic | absolute_url }}"/>
+                        <span class="card-title"> {{ flight.city }} </span>
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="row">
+                            <p class="col s12 m12" style="text-align:center;">
+                                <span style="left"> FREITAG {{ flight.depart_date }} &nbsp; - &nbsp; SONNTAG {{ flight.return_date }}</span>
+                                <span style="right">  </span>
+                            </p>    
+                        </div>
+                        
+                        <div class="row">
+                            <ul class="content">
+
+                                <div class="outgoing-flight">
+                                    <li>
+                                        <ul class="origin col s4 m2">
+                                            <li class="hour">{{ flight.depart_time }}</li>
+                                            <li class="city grey-text">{{ flight.origin }}</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul class="duration col s4 m2">
+                                            <li class="duration">{{ flight.depart_duration }}</li>
+                                            {% capture plane_pic %}{% link /assets/img/plane.png %}{% endcapture %}
+                                            <img src="{{ plane_pic | absolute_url }}" style="max-width:80%;"/>
+                                            <li class="duration">
+                                                <span class="teal-text text-darken-3">Directo</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul class="destination col s4 m2">
+                                            <li class="hour">{{ flight.depart_arrival }}</li>
+                                            <li class="city grey-text">{{ flight.destination }}</li>
+                                        </ul>
+                                    </li>
+                                </div> <!-- outgoing-flight -->
+
+                                <div class="return-flight">
+                                    <li>
+                                        <ul class="origin col s4 m2">
+                                            <li class="hour">{{ flight.return_time }}</li>
+                                            <li class="city grey-text">{{ flight.destination }}</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul class="duration col s4 m2">
+                                            <li class="duration">{{ flight.return_duration }}</li>
+                                            {% capture plane_pic %}{% link /assets/img/plane.png %}{% endcapture %}
+                                            <img src="{{ plane_pic | absolute_url }}" style="max-width:80%;"/>
+                                            <li class="duration">
+                                                <span class="teal-text text-darken-3">Directo</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul class="destination col s4 m2">
+                                            <li class="hour">{{ flight.return_arrival }}</li>
+                                            <li class="city grey-text">{{ flight.origin }}</li>
+                                        </ul>
+                                    </li>
+                                </div> <!-- return-flight -->
+
+                            </ul>
+                        </div> <!-- row -->
+                    
+                    </div> <!-- card-content -->
+                    
+                    <div class="card-action" style="text-align: right;">
+                        <a href="{{ flight.map }}"  target="_blank"> <span> Karte </span> </a>
+                        <a href="#"> <span> {{ flight.fare }}€ </span> </a>
+                    </div>
+
+                </div> <!-- card -->
+            </div> <!-- col s12 m12 -->
+        </div> <!-- row container -->
+    {% endfor %}
+    </div>
+</body>
+{% include footer.html %}
+</html>
